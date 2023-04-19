@@ -3,11 +3,28 @@
 [![Donate](https://img.shields.io/badge/Donate-Buy%20Me%20a%20Coffee-yellow.svg)](https://www.buymeacoffee.com/RwIpTEd)
 [![Stars](https://img.shields.io/github/stars/fatihturker/PI-AGI.svg?style=flat-square)](https://github.com/fatihturker/PI-AGI/stargazers)
 
-Welcome to PI AGI, a groundbreaking project aiming to revolutionize the world of Artificial Intelligence by developing a base for role-based AGIs (Artificial General Intelligences) that are personalized and optimized for specific tasks. By clearly defining and personalizing AGIs, you can unlock the true power and meaning of AGI.
+Welcome to PI AGI, a groundbreaking project that aims to revolutionize the world of Artificial Intelligence. By developing a base for role-based AGIs (Artificial General Intelligences) that are personalized and optimized for specific tasks, we can unlock the true power and meaning of AGI.
+
+![PI AGI Concept](assets/pi-agi-concept.svg)
+
+## Table of Contents
+
+- [The Ultimate Vision](#sparkles-the-ultimate-vision)
+- [Getting Started](#rocket-getting-started)
+- [Repository Overview](#wrench-repository-overview)
+  - [Environment Parameters](#environment-parameters)
+  - [Working Styles](#working-styles)
+  - [Project Goal](#project-goal)
+- [Get Involved](#star-get-involved)
+  - [Donations](#donations)
+  - [Contributors](#contributors)
+- [Join the Community](#handshake-join-the-community)
 
 ## :sparkles: The Ultimate Vision
 
 Imagine a world where personalized AGIs are seamlessly integrated into our daily lives, enhancing productivity and creativity across various domains, such as software development, medicine, finance, and more. With PI AGI, we strive to make this dream a reality by building a foundation for AGIs that are tailored to specific roles and responsibilities.
+
+![PI AGI Use Cases](assets/pi-agi-use-cases.svg)
 
 ## :rocket: Getting Started
 
@@ -66,3 +83,4 @@ Fuel the future of AI by [buying me a coffee](https://www.buymeacoffee.com/RwIpT
 We believe that collaboration is the key to unlocking the true potential of AGI. By working together, we can create a better, more intelligent future for all. So don't hesitate to get involved, contribute your ideas, or share your thoughts with us.
 
 We're looking forward to building the future of AI together!
+

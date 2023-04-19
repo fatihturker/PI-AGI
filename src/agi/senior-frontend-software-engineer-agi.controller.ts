@@ -106,11 +106,10 @@ export class SeniorFrontendSoftwareEngineerAGI extends MainAGI {
       .replace('{{APPLICATION_NAME}}', content.name)
       .replace('{{PROJECT_DOCUMENTATION}}', content.input);
 
-    const subPrompt = this.nextPrompt
+    let subPrompt = this.nextPrompt
       .replace('{{ENVIRONMENT}}', content.environment)
       .replace('{{APPLICATION_NAME}}', content.name)
-      .replace('{{PROJECT_DOCUMENTATION}}', content.input)
-      .replace('{{MAX_ATTEMPT}}', content.maxAttempt.toString());
+      .replace('{{PROJECT_DOCUMENTATION}}', content.input);
 
     let max_tokens = this.openAIProvider.getMaxTokens(mainPrompt);
 
@@ -127,7 +126,7 @@ export class SeniorFrontendSoftwareEngineerAGI extends MainAGI {
     );
     memoryUtil.writeLTM(parsed);
 
-    let maxAttempt = 0;
+    let estimation = 0;
 
     if (parsed.neededStepCount) {
       const action = {
@@ -141,23 +140,23 @@ export class SeniorFrontendSoftwareEngineerAGI extends MainAGI {
       } as Action;
 
       const actRes = await actionUtil.takeAction(action);
-
-      if (actRes === 'y') {
-        maxAttempt = parsed.neededStepCount;
-      } else {
+      estimation = parsed.neededStepCount;
+      if (actRes !== 'y') {
         return;
       }
-    } else {
-      maxAttempt = content.maxAttempt;
     }
 
     const steps: string[] = parsed.steps;
 
-    subPrompt.replace('{{ALL_STEPS}}', JSON.stringify(steps));
+    subPrompt = subPrompt
+      .replace('{{ALL_STEPS}}', JSON.stringify(steps))
+      .replace('{{MAX_ATTEMPT}}', estimation.toString());
 
     let attemptCount = 1;
 
-    while (!parsed.completed && maxAttempt >= attemptCount) {
+    let iteration = 0;
+
+    while (!parsed.completed && content.maxAttempt >= attemptCount) {
       const stepName = 'Step ' + attemptCount.toString() + ': ' + parsed.step;
 
       loggerUtil.log(stepName);
@@ -188,6 +187,22 @@ export class SeniorFrontendSoftwareEngineerAGI extends MainAGI {
 
       nextPrompt = nextPrompt.replace('{{MAX_TOKEN}}', max_tokens.toString());
 
+      if (attemptCount === estimation + 10 * iteration) {
+        iteration++;
+        const action = {
+          type: ActionType.REQUEST_USER_INPUT,
+          input: {
+            request:
+              'I still have steps to complete the task. If you want me to continue with 10 more steps please confirm type (y), otherwise I will stop.',
+          },
+        } as Action;
+
+        const actRes = await actionUtil.takeAction(action);
+        if (actRes !== 'y') {
+          return false;
+        }
+      }
+
       try {
         res = await this.openAIProvider.generateCompletion(
           nextPrompt,
@@ -208,7 +223,7 @@ export class SeniorFrontendSoftwareEngineerAGI extends MainAGI {
       attemptCount++;
     }
 
-    if (maxAttempt <= attemptCount) {
+    if (content.maxAttempt <= attemptCount) {
       loggerUtil.log('Reached out to maximum attempt.');
     }
 

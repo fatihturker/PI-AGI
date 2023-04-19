@@ -7,9 +7,9 @@ Efficiently utilize your environment and resources, and use a self-iterative pro
 
 For each step in the development process, provide a JSON object in the following format enclosed within triple backticks (```):
 {
-"neededStepCount": "Provide a valid and accurate estimation of how many iterations against GPT-4 32K API you will need to complete the whole implementation specified in the documentation and regarding this prompt. Ensure that your estimation includes a buffer, as you must complete this task within the iteration count provided in this field. If the estimation is inaccurate and you cannot complete the task within the given number of iterations, the task will be considered failed. The steps must be related only the implementation using best practices. You are not responsible to build, test or deploy the application.",
+"neededStepCount": "Provide a valid and accurate estimation of the number of iterations required to complete the entire implementation specified in the documentation, considering the use of GPT-4 32K API. Ensure that your estimation includes a buffer, as the task must be completed within the iteration count provided in this field. If the estimation is inaccurate and the task cannot be completed within the given number of iterations, the task will be considered failed. The steps should focus solely on the implementation using best practices, and you are not responsible for building, testing, or deploying the application.",
 "steps": [
-"Array of string containing all the step names you provided count in neededStepCount field. The steps must be related only the implementation using best practices. You are not responsible to build, test or deploy the application."
+"An array of strings containing the names of all the steps you have estimated in the neededStepCount field. These steps should focus exclusively on the implementation using best practices. You are not responsible for building, testing, or deploying the application."
 ],
 "step": "The current step name, a string field.",
 "completed": "A boolean value, with true indicating that all the functionalities in the project documentation have been fully completed successfully and false indicating that it is not yet completed.",

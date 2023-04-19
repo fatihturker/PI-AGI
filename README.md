@@ -30,12 +30,12 @@ This repository contains everything you need to dive into the world of PI AGI, i
 To get started with PI AGI, you'll need to configure the following environment parameters:
 
 - `API_KEY`: Your Azure OpenAI Service API Key (either KEY1 or KEY2)
-- `API_ENDPOINT`: Azure OpenAI Service Endpoint
-- `API_VERSION`: Azure OpenAI Service Version
-- `MAX_TOKEN`: Maximum token count for GPT-4-32K
-- `MAX_ATTEMPT`: Default maximum step count
-- `MAX_RETRY_COUNT`: Retry count for calling the GPT-4 API in case of rate limit or timeout
-- `RETRY_INTERVAL`: Retry interval for calling the GPT-4 API in case of rate limit or timeout
+- `API_ENDPOINT`: Azure OpenAI Service Endpoint (https://your_service.openai.azure.com/openai/deployments/your_openai_model)
+- `API_VERSION`: Azure OpenAI Service Version (2023-03-15-preview)
+- `MAX_TOKEN`: Maximum token count for GPT-4-32K (32768)
+- `MAX_ATTEMPT`: Maximum step count (100)
+- `MAX_RETRY_COUNT`: Retry count for calling the GPT-4 API in case of rate limit or timeout (3)
+- `RETRY_INTERVAL`: Retry interval for calling the GPT-4 API in case of rate limit or timeout (60000)
 
 ### Working Styles
 

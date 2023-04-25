@@ -31,9 +31,9 @@ Follow these steps to start exploring the world of PI AGI:
 1. Clone the repository and navigate to the project folder.
 2. Run `npm install` to install the required dependencies.
 3. Configure the environment parameters as mentioned in the [Repository Overview](#wrench-repository-overview) section.
-4. Open `index.ts` and set your application name, environment information, and other necessary configurations.
+4. Create .env file and set your environment configuration, and other necessary configurations.
 5. Customize or add new AGIs by modifying the agi prompts located in the `src/asset/agi` folder.
-6. Update the project documentation in `src/asset/input/project-documentation.md` to match your requirements.
+6. Update the project documentation in `src/asset/input/backend-example-project-documentation.md` and `src/asset/input/frontend-example-project-documentation.md` to match your requirements.
 7. Once you've set up everything, run `npm start` to kick off the AGI.
 
 ## :wrench: Repository Overview

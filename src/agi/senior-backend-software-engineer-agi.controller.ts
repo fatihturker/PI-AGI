@@ -4,9 +4,9 @@ import { MainAGI } from './main.agi';
 import { OpenAIAzureProvider } from '../provider/open-ai.provider';
 
 /**
- * A class representing a Senior Frontend Software Engineer AGI.
+ * A class representing a Senior Backend Software Engineer AGI.
  */
-export class SeniorFrontendSoftwareEngineerAGI extends MainAGI {
+export class SeniorBackendSoftwareEngineerAGI extends MainAGI {
   constructor(openAIProvider: OpenAIAzureProvider) {
     super(openAIProvider);
   }
@@ -27,8 +27,8 @@ export class SeniorFrontendSoftwareEngineerAGI extends MainAGI {
         'asset',
         'agi',
         'software-engineer',
-        'frontend',
-        'senior-frontend-engineer-angular-main.agi.md'
+        'backend',
+        'senior-backend-engineer-nodejs-with-typescript-main.agi.md'
       )
     );
 
@@ -39,8 +39,8 @@ export class SeniorFrontendSoftwareEngineerAGI extends MainAGI {
         'asset',
         'agi',
         'software-engineer',
-        'frontend',
-        'senior-frontend-engineer-angular-next.agi.md'
+        'backend',
+        'senior-backend-engineer-nodejs-with-typescript-next.agi.md'
       )
     );
   }

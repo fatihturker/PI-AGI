@@ -1,8 +1,0 @@
-node_modules
-task/*
-output/log/*
-output/memory/*
-
-.env
-
-package-lock.json
